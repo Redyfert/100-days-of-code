@@ -41,6 +41,33 @@ const stop = (id)=>{
 }
 const stopButton = document.getElementById("stopButton");
 stopButton.addEventListener("click",stop);
+const currentSongIndex = getCurrentIndex();
 const next = () =>{
-
+const nextSongIndex = userData?.songs(currentSongIndex+1)
+play(nextSongIndex.id);
 }
+const getCurrentIndex = ()=>{
+    userData?.songs.indexOf(userData?.currentSong)
+}
+const nextButton = document.getElementById("nextButton");
+nextButton.addEventListener("click",next)
+const previous = () =>{
+    const previousSongIndex = userData?.songs(currentSongIndex-1);
+    play(previousSongIndex.id)
+}
+const previousButton = document.getElementById("previousButton");
+previousButton.addEventListener("click", previous);
+const shuffle = () =>{
+    userData?.songs.sort(()=> Math.random()-0.5)
+    userData?.currentSong = null;
+    userData?.currentSongDuration = 0;
+    renderSongs(userData?.songs)
+    stop()
+}
+const shuffleButton = document.getElementById("shuffleButton");
+shuffleButton.addEventListener("click",shuffle);
+const renderSongs = (array)=>{
+    songs=array.map((song) => {
+        return `<li></li>`
+    })
+};
