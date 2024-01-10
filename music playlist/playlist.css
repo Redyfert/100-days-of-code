@@ -1,7 +1,26 @@
-#mainbody{
-
+:root{
+--main-color : rgb(60, 73, 62);
+--lighter-main-color:rgb(177, 205, 181);
+--light-orange:rgb(255, 231, 189);
+--main-text:rgb(79, 114, 80)
 }
-/* секции 1 2 3 */
+body{
+    margin:0;
+}
+#mainbody{
+margin:0;
+display: grid;
+grid-auto-flow: column;
+}
+h1{
+    color:var(--main-text);
+    font-family: Manrope;
+}
+section{
+    border: solid 2px var(--main-color);
+}
+
+/* sections 1 2 3 */
 #morePlaylists{
 
 }
@@ -11,7 +30,7 @@
 #titleSongButtons{
 
 }
-/* то что в первой секции */
+/* 1st section */
 #currentPlaylistImgDiv{
 
 }
@@ -24,7 +43,7 @@
 .morePlaylistsImg{
 
 }
-/* то что в второй секции */
+/* 2nd section */
 #playlistTitleDiv{
 
 }
@@ -43,7 +62,7 @@
 #favButton{
 
 }
-/* то что в третей секции */
+/* 3rd section */
 #titleDiv{
 
 }

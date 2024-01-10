@@ -5,6 +5,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>My playlist</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=Manrope&display=swap" rel="stylesheet">
     <link rel='stylesheet' type='text/css' media='screen' href='playlist.css'>
     <script src="https://kit.fontawesome.com/79f7988827.js" crossorigin="anonymous"></script>
     <script src='playlist.js'></script>
@@ -12,7 +13,7 @@
 <body>
     <div id="mainbody">
         <!-- 3 главных секции - плейлисты, плейлист и песни, тайтл песня кнопки -->
-    <section id="morePlaylists">
+    <section class="section" id="morePlaylists">
         <div id="currentPlaylistImgDiv">
             <img src="" alt="current playlist img" id="currentPlaylistImg">
         </div>
@@ -23,22 +24,22 @@
             <img src="" alt="" id="morePlaylistsImg4" class="morePlaylistsImg">
         </div>
     </section>
-    <section id="playlistMainSongs">
+    <section class="section" id="playlistMainSongs">
         <div id="playlistTitleDiv">
             <h1 id="playlistTitle"></h1>
         </div>
         <div id="songsDiv">
             <un id="songs">
-                <li class="song" id="song1"><button id="favButton"></button></li>
-                <li class="song" id="song1"><button id="favButton"></button></li>
-                <li class="song" id="song2"><button id="favButton"></button></li>
-                <li class="song" id="song3"><button id="favButton"></button></li>
-                <li class="song" id="song4"><button id="favButton"></button></li>
-                <li class="song" id="song5"><button id="favButton"></button></li>
+                <li class="song" id="song1"><button class="buttonSpanElement"><span class="songNameSpan"></span><span class="songArtistSpan"></span><span class="songDurationSpan"></span></button><button id="favButton"></button></li>
+                <li class="song" id="song1"><button class="buttonSpanElement"><span class="songNameSpan"></span><span class="songArtistSpan"></span><span class="songDurationSpan"></span></button><button id="favButton"></button></li>
+                <li class="song" id="song2"><button class="buttonSpanElement"><span class="songNameSpan"></span><span class="songArtistSpan"></span><span class="songDurationSpan"></span></button><button id="favButton"></button></li>
+                <li class="song" id="song3"><button class="buttonSpanElement"><span class="songNameSpan"></span><span class="songArtistSpan"></span><span class="songDurationSpan"></span></button><button id="favButton"></button></li>
+                <li class="song" id="song4"><button class="buttonSpanElement"><span class="songNameSpan"></span><span class="songArtistSpan"></span><span class="songDurationSpan"></span></button><button id="favButton"></button></li>
+                <li class="song" id="song5"><button class="buttonSpanElement"><span class="songNameSpan"></span><span class="songArtistSpan"></span><span class="songDurationSpan"></span></button><button id="favButton"></button></li>
             </un>
         </div>
     </section>
-    <section id="titleSongButtons">
+    <section class="section" id="titleSongButtons">
         <div id="titleDiv">
             <h1 id="title">My Playlist</h1>
         </div>
