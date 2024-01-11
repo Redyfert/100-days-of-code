@@ -25,7 +25,7 @@ currentSongDuration:0,
 }
 const play = (id)=>{
     const song = userData?.songs.find((song) => song.id===id);
-    audio.src=song.src;
+    audio.url=song.src;
     audio.title=song.title;
     if(userData?.currentSong===null||userData?.currentSong.id!==song.id){
         audio.currentTime = 0;
@@ -37,10 +37,15 @@ const play = (id)=>{
 audio.play()
 }
 const playButton = document.getElementById("playButton");
-playButton.addEventListener("click", play);
+playButton.addEventListener("click", () => {
+    if (userData?.currentSong === null) {
+    play(userData?.songs[0].id);
+  } else {
+    play(userData?.currentSong.id);
+  }});
 
 const stop = ()=>{
-    userData?.currentSongDuration = audio.currentTime;
+    userData.currentSongDuration = audio.currentTime;
     audio.pause()
 }
 const stopButton = document.getElementById("stopButton");
@@ -65,8 +70,8 @@ const previousButton = document.getElementById("previousButton");
 previousButton.addEventListener("click", previous);
 const shuffle = () =>{
     userData?.songs.sort(()=> Math.random()-0.5)
-    userData?.currentSong = null;
-    userData?.currentSongDuration = 0;
+    userData.currentSong = null;
+    userData.currentSongDuration = 0;
     renderSongs(userData?.songs)
     stop()
 }
