@@ -4,7 +4,7 @@ const allSongs = [
         title: "Skorpioni",
         artist: "Marko Percovic",
         duration: "4:28",
-        src:"D:\Developing\HTML; CSS\js тренировачка гоп-гоп\music playlist\assets\Thompson-Skorpioni.mp3",
+        src:".\assets\Thompson-Skorpioni.mp3",
         imgsrc:"https://i.scdn.co/image/ab67616d0000b27384dd875c0dc476a8e03c75aa"
     },
     {
@@ -12,7 +12,7 @@ const allSongs = [
         title:"The Sea of Thieves",
         artist: "Robin Beanland",
         duration:"2:25",
-        src:"D:\Developing\HTML; CSS\js тренировачка гоп-гоп\music playlist\assets\The Sea of Thieves.mp3",
+        src:".\assets\The Sea of Thieves.mp3",
         imgsrc:"https://upload.wikimedia.org/wikipedia/en/7/77/Sea_of_thieves_cover_art.jpg"
     }
 ];
@@ -27,7 +27,7 @@ const play = (id)=>{
     const song = userData?.songs.find((song) => song.id===id);
     audio.src=song.src;
     audio.title=song.title;
-    if(userData?.currentSong=null||userData?.currentSong.id!==song.id){
+    if(userData?.currentSong===null||userData?.currentSong.id!==song.id){
         audio.currentTime = 0;
     }else{
         currentSongDuration = audio.currentTime;
@@ -39,7 +39,7 @@ audio.play()
 const playButton = document.getElementById("playButton");
 playButton.addEventListener("click", play);
 
-const stop = (id)=>{
+const stop = ()=>{
     userData?.currentSongDuration = audio.currentTime;
     audio.pause()
 }
